@@ -1,10 +1,12 @@
 import { Router } from 'express';
 import dotenv from 'dotenv';
+import Feedback from '../db/models/Feedback.js';
 
 dotenv.config();
-
 export const router = Router();
-
-router.get('/users', async (req, res) => {
-  console.log('endponit work /users');
+router.post('/feedback', async (req, res) => {
+  const feedback = new Feedback(req.body);
+  feedback.save();
+  console.log('Сервер ответил');
+  // console.log();
 });
