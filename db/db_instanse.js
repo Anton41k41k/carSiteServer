@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const connectionString = process.env.DB;
+const connectionString = process.env.ESB_DB;
 
 export async function connect() {
   try {
