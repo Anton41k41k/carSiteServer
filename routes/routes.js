@@ -9,9 +9,11 @@ router.post('/feedback', async (req, res) => {
   const feedback = new Feedback(req.body);
   feedback.save();
   console.log('Сервер отправил feedback');
+  return res.status(200).json({ message: 'Заявка успешно отправлена' });
 });
 router.post('/order', async (req, res) => {
   const order = new Order(req.body);
   order.save();
   console.log('Сервер отправил order');
+  return res.status(200).json({ message: 'Заявка успешно отправлена' });
 });
